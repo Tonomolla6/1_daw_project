@@ -1,0 +1,1 @@
+<?php include('module/admin/index.php');?>

@@ -1,0 +1,180 @@
+
+#page div.hidden_container {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    background-color: rgba(0, 0, 0, 0.322);
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+#page div.hidden_container_page {
+    background-color: white;
+    padding: 30px 30px 10px 30px;
+    height: 85%;
+    width: 65vw;
+}
+
+#page div.hidden_container_content {
+    height: 90%;
+    width: 100%;
+}
+
+#page div.hidden_container_content .info {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+#page div.hidden_container_content .info p{
+    margin-left: 5px;
+}
+
+#page div.hidden_container_sliders {
+    background-color: rgb(238, 238, 238);
+    width: 100%;
+    overflow-y: scroll;
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#page div.hidden_container_sliders div {
+    width: 240px;
+    background-color: black;
+    height: 140px;
+    display: flex;
+    align-items: center;
+    margin: 25px;
+    background-size: cover;
+    color:white;
+    position: relative;
+}
+
+#page div.hidden_container_sliders div div.hidden_plus {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: 0;
+    background: #FFC107;
+    opacity: 0;
+    transition: 0.3s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    z-index: 1;
+}
+
+#page div.hidden_container_sliders div div.hidden_del {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    background: red;
+    opacity: 0;
+    transition: 0.3s;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    z-index: 1;
+}
+
+#page div.hidden_container_sliders div div.hidden_plus:hover {
+    opacity: 0.9;
+    width: 240px;
+    z-index: 2;
+}
+
+#page div.hidden_container_sliders div div.hidden_del:hover {
+    opacity: 0.9;
+    width: 240px;
+    z-index: 2;
+}
+
+#page div.hidden_container_sliders div i {
+    color: white;
+    font-size: 30px;
+    opacity: 1;
+}
+
+#page div.hidden_container_sliders div span {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+    margin-left: 20px;
+}
+
+#page div.hidden_container_sliders div span p {
+    font-size: 11px;
+}
+
+#page div.hidden_container_sliders div span label {
+    font-size: 10px;
+}
+
+#page div.hidden_container_buttons {
+    height: 10%;
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#page div.hidden_container_buttons div.plus:hover {
+    background-color: #00BCD4;
+}
+
+#page div.hidden_container_buttons div.close:hover {
+    background-color: red;
+}
+
+#page div.modules {
+    display: flex;
+}
+
+#page div.module {
+    background-color: white;
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    width: 70px;
+    transition: 0.2s background;
+}
+
+#page div.modules div.module p {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+#page div.modules div.module i {
+    font-size: 35px;
+}
+
+#page div.button {
+    text-align: center;
+    padding: 6px 12px;
+    width: auto;
+    background: #4b4b4b;
+    color: white;
+    font-weight: bold;
+    border: 0px;
+    transition: 0.2s background;
+    cursor: pointer;
+    margin: 15px 4px;
+}
+
+#page div.modules div.module:hover {
+    background: #00BCD4;
+    color: white;
+}

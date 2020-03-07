@@ -1,0 +1,101 @@
+#homepage_slider {
+    width: 100%;
+    background-image: url(/nueva_final/module/client/module/homepage/view/img/test.jpg);
+    background-size: cover;
+    height: 75vh;
+    position: relative;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 1s background-image ease-out;
+}
+
+#homepage_slider div.button {
+    height: 100%;
+    width: 30%;
+    display: flex;
+    align-items: center;
+}
+
+#homepage_slider div.button1 {
+    justify-content: flex-start;
+}
+
+#homepage_slider div.button2 {
+    justify-content: flex-end;
+}
+
+#homepage_slider div.button i {
+    display: flex;
+    width: 40px;
+    height: 60px;
+    background-color: black;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.3;
+    transition: 0.5s opacity;
+    cursor: pointer;
+    margin-top: 12vh;
+}
+
+#homepage_slider div.button:hover i {
+    opacity: 1;
+}
+
+#homepage_slider div.text {
+    position: absolute;
+    margin: 0px 200px;
+    color: white;
+}
+
+#homepage_slider div.text h2 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+
+#homepage_slider div.text p {
+    font-size: 20px;
+}
+
+div.page {
+    background: rgb(225, 225, 225);
+    min-height: 700px;
+    padding: 10px;
+}
+
+div.page h2 {
+    font-weight: 100;
+    border-bottom: 2px solid black;
+}
+
+div.page .information {
+    padding: 20px;
+    background: white;
+    margin-bottom: 10px;
+}
+
+div.page .contenedores {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+div.page .information .contenedores .div {
+    width: 200px;
+    margin: 25px;
+    cursor: pointer;
+}
+
+div.page .information .contenedores .img {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+}
+
+div.page .information .contenedores p {
+    text-align: center;
+    font-size: 18px;
+    margin: 5px 0px;
+}

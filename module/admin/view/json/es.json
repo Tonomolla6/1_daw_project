@@ -1,0 +1,31 @@
+{
+    "es": {
+        "Homepage": "Página principal",
+        "Products": "Productos",
+        "Users": "Usuarios",
+        "Discounts": "Descuentos",
+        "Orders": "Pedidos",
+        "Settings": "Ajustes",
+        "Log Out": "Cerrar sessión",
+        "All Products": "Todos los productos",
+        "Administrator": "Administrador",
+        "Add product": "Añadir producto",
+        "Delete all": "Eliminar todo",
+        "Name": "Nombre",
+        "Sale price": "Precio&nbsp;de&nbsp;venta",
+        "Stock": "En&nbsp;almacén",
+        "Provider": "Proveedor",
+        "Purchase price": "Precio de compra",
+        "Description": "Descripción",
+        "Reset": "Resetear",
+        "Back": "Atrás",
+        "Create Product": "Crear producto",
+        "Update Product": "Actualizar producto",
+        "Read": "Leer",
+        "Update": "Actualizar",
+        "Delete": "Eliminar",
+        "Are you sure you want to delete all products?": "¿Seguro que quieres eliminar todos los productos?",
+        "Accept":"Aceptar",
+        "Cancel":"Cancelar"
+}
+}

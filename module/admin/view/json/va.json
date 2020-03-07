@@ -1,0 +1,31 @@
+{
+  "va": {
+    "Homepage": "Pàgina principal",
+    "Products": "Productes",
+    "Users": "Usuaris",
+    "Discounts": "Descomptes",
+    "Orders": "Comandes",
+    "Settings": "Ajustos",
+    "Log Out": "Tancar sessió",
+    "All Products": "Tots els productes",
+    "Administrator": "Administrador",
+    "Add product": "Afegir producte",
+    "Delete all": "Eliminar tot",
+    "Name": "Nom",
+    "Sale price": "Preu&nbsp;de&nbsp;venda", 
+    "Stock": "En&nbsp;magatzem",
+    "Provider": "Proveïdor",
+    "Purchase price": "Preu de compra",
+    "Description": "Descripció",
+    "Reset": "Reinicialitzar",
+    "Back": "Arrere",
+    "Create Product": "Crear producte",
+    "Update Product": "Actualitzar producte",
+    "Read":"Llegir",
+    "Update":"Actualitzar",
+    "Delete":"Eliminar",
+    "Are you sure you want to delete all products?": "Segur que vols eliminar tots els productes?",
+    "Accept":"Acceptar",
+    "Cancel":"Cancel·lar"
+  }
+}

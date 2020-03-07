@@ -1,0 +1,154 @@
+
+#map {
+    height: 500px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+div.mapa_text {
+    height: 140px;
+    margin: 0px;
+    padding: 0px;
+    font-size: 40px;
+    color: white;
+    margin-top: 225px;
+    margin-left: 119px;
+    margin-bottom: 35px;
+    width: 415px;
+    top: 0;
+    position: absolute;
+}
+
+div.mapa_text p {
+    font-size: 20px;
+}
+
+div.mapa_text h2 {
+    color: #2196F3;
+    font-size: 45px;
+}
+
+div.page {
+    margin: 35px 50px;
+    margin-bottom: -90px;
+    display: flex;
+    transform: translateY(-130px);
+    background-color: white;
+    flex-direction: column;
+    padding: 30px 70px;
+}
+
+.content_page {
+    display: flex;
+}
+
+div.left {
+    width: 100%;
+    height: 430px;
+}
+
+div.left form {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    height: 100%;
+}
+
+div.page p.route {
+    margin: 10px 0px;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+div.page p.route strong {
+    color: #2196F3;
+}
+
+div.page h1 {
+    font-size: 40px;
+    padding-bottom: 20px;
+}
+
+div.page form div {
+    margin: 0px 0px;
+    display: flex;
+    flex-direction: column;
+}
+
+div.page form p {
+    width: 30%;
+    display: flex;
+    align-items: center;
+    margin: 10px 0px;
+}
+
+div.page input,select {
+    padding: 6px 16px;
+    line-height: 25px;
+    font-size: 14px;
+    font-family: inherit;
+    border: 1px solid #b0b0b0;
+    margin: 8px 0px;
+    width: 80%;
+}
+div.page textarea {
+    padding: 3px 10px;
+}
+
+div.page select {
+    background-color: white;
+    width: 140px;
+}
+
+div.page div.radio {
+    flex-direction: row;
+    align-items: center;
+    margin: 0px 10px 0px 0px;
+}
+
+div.page div.radio_linea {
+    flex-direction: row;
+    margin: 0;
+}
+
+div.page div.radio input {
+    width: auto;
+    margin: 5px;
+}
+
+div.page div.radio p {
+    margin: 0;
+    width: auto;
+}
+
+div.page form div.buttons {
+    flex-direction: row;
+}
+
+div.page form div.button {
+    text-align: center;
+    padding: 6px 12px;
+    width: 50px;
+    background: black;
+    color: white;
+    font-weight: bold;
+    border: 0px;
+    transition: 0.2s background;
+    cursor: pointer;
+    margin: 15px 4px;
+    cursor: pointer;
+}
+
+div.page form div.send:hover {
+    background: #00BCD4;
+}
+
+div.page form div.reset:hover {
+    background: red;
+}
+
+div.right {
+    padding: 50px 15px;
+    min-width: 250px;
+}

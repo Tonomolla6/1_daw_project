@@ -1,0 +1,400 @@
+#page {
+    display: flex;
+    flex-direction: column;
+}
+
+div.products_dummies {
+    display: flex;
+    align-items: center;
+    transition: 0.2s color;
+}
+
+div.products_dummies i {
+    color: #c400df;
+    margin: 0px 3px 1px 0px;
+    font-size: 18px;
+}
+
+div.products_title_buttons {
+    display:flex;
+}
+
+div.title div.products_title_buttons div{
+    margin: 0px 10px;
+    cursor: pointer;
+}
+
+div.title div.products_title_button {
+    display: flex;
+    align-items: center;
+    transition: 0.2s color;
+}
+
+div.title div.products_add_button i {
+    color: #00BCD4;
+    margin-right: 4px;
+    font-size: 20px;
+}
+
+div.title div.products_delete_all_button i {
+    color: red;
+    margin-right: 4px;
+    font-size: 20px;
+}
+
+div.title div.products_back_button i {
+    color: red;
+    margin-right: 4px;
+    font-size: 20px;
+}
+
+div.title div.products_delete_all_button:hover {
+    color: red;
+}
+
+div.title a:hover div.products_add_button {
+    color: #00BCD4;
+}
+
+div.title a:hover div.products_back_button{
+    color: red;
+}
+
+div.title a:hover div.products_dummies{
+    color: #c400df;
+}
+
+div.products_question {
+    display: none;
+}
+
+table.list_products {
+    border-radius: 5px 5px 0 0;
+    border-collapse: collapse;
+}
+/* table.list_products tr.products_first {
+    border-bottom: 12px solid#00BCD4;
+} */
+table.list_products tr.products_first th {
+    font-weight: bold;
+    background-color: #00BCD4;
+    color: white;
+    padding: 10px 22px 10px 15px;
+    text-align: left;
+    border: none;
+}
+table.list_products tr.products_first th.price{
+    width: 85px;
+}
+table.list_products tr.products_first th.stock{
+    width: 85px;
+}
+table.list_products tr.products_first th.id{
+    width: 15px;
+}
+table.list_products tr.products_first th.settings{
+    width: 282px;
+}
+table.list_products tr.products_first th.provider{
+    width: 100px;
+}
+table.list_products tr:nth-of-type(even) {
+    border-top: 1px solid rgb(204, 204, 204);
+    border-bottom: 1px solid rgb(204, 204, 204);
+    background-color: rgb(238, 238, 238);
+}
+
+table.list_products tr:hover {
+    background-color: #00bcd41f;
+}
+
+table.list_products tr td {
+    padding: 8px 15px;
+}
+
+table.list_products tr td.products_settings {
+    display: flex;
+}
+
+table.list_products tr td.products_settings a {
+    display: flex;
+    margin: 0px 10px;
+    color: black;
+    cursor: pointer;
+    transition: 0.2s color;
+}
+
+table.list_products tr td.products_settings a i {
+    font-size: 20px;
+}
+
+table.list_products tr td.products_settings a p {
+    margin: 0px 3px;
+}
+
+table.list_products tr td.products_settings a.read i {
+    color: green;
+}
+table.list_products tr td.products_settings a.update i {
+    color: #FFC107;
+}
+table.list_products tr td.products_settings a.delete i {
+    color: red;
+}
+
+table.list_products tr td.products_settings a.read:hover {
+    color:green;
+}
+table.list_products tr td.products_settings a.update:hover {
+    color: #FFC107;
+}
+table.list_products tr td.products_settings a.delete:hover {
+    color:red;
+}
+
+/* ----------------- Create and Update products ----------------- */
+
+form#form_create_product hr {
+    border: 1.1px solid #f0f0f0;
+    background: #f0f0f0;
+}
+
+form#form_create_product input,textarea,select {
+    padding: 6px 16px;
+    line-height: 25px;
+    font-size: 14px;
+    font-family: inherit;
+    border: 1px solid #b0b0b0;
+    margin: 8px 13px;
+    width: 20%;
+}
+
+form#form_create_product input#name {
+    width: 40%;
+}
+
+form#form_create_product textarea {
+    width: 100%;
+}
+
+form#form_create_product div.products_input div {
+    max-width: 20%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+form#form_create_product div.products_input {
+    display: flex;
+    align-items: center;
+}
+
+form#form_create_product input.add_button {
+    text-align: center;
+    padding: 6px 12px;
+    width: auto;
+    background: #4b4b4b;
+    color: white;
+    font-weight: bold;
+    border: 0px;
+    transition: 0.2s background;
+    cursor: pointer;
+    margin: 15px 4px;
+}
+
+form#form_create_product input.reset_button {
+    text-align: center;
+    padding: 6px 12px;
+    width: auto;
+    background: #4b4b4b;
+    color: white;
+    font-weight: bold;
+    border: 0px;
+    transition: 0.2s background;
+    cursor: pointer;
+    margin: 15px 4px;
+}
+
+form#form_create_product input.add_button:hover {
+    background: #00BCD4;
+}
+
+form#form_create_product input.reset_button:hover {
+    background: red;
+}
+
+form#form_create_product span {
+    font-size: 14px;
+    margin-left: 22%;
+    color: red;
+    display: none;
+}
+
+span.succes {
+    font-size: 15px;
+    margin: 11px 0px;
+    color: green;
+    display: block;
+}
+
+span.error {
+    font-size: 15px;
+    margin: 11px 0px;
+    color: red;
+    display: block;
+}
+
+/*-------------------- Delete --------------------*/
+
+#products_question {
+	position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left:0;
+	z-index: -1;
+	background-color: rgba(0, 0, 0, 0.322);
+	display: none;
+	justify-content: center;
+    align-items: center;
+}
+
+.products_question p {
+	font-size: 16px;
+	padding-bottom: 12px;
+	padding-top: 5px;
+}
+
+.question {
+	background-color: white;
+	padding: 20px;
+	flex-direction: column;
+	align-items: center;
+    display: none;
+    max-width: 600px;
+}
+
+.question div {
+	display: flex;
+	margin: 5px;
+}
+
+.question a.accept {
+	justify-content: center;
+	align-items: center;
+	padding: 6px 12px;
+	color: white;
+	cursor: pointer;
+	font-size: 14px;
+    background-color:black;
+    font-weight: bold;
+    height: 18.5px;
+    margin-top: 5px;
+    transition: 0.2s background-color;
+}
+
+.question a.accept:hover {
+	background-color:#00BCD4;
+}
+
+.question a.cancel {
+	justify-content: center;
+	align-items: center;
+	padding: 6px 12px;
+	color: white;
+	cursor: pointer;
+	font-size: 14px;
+    background-color:black;
+    font-weight: bold;
+    height: 18.5px;
+    margin-top: 5px;
+    margin-left: 10px;
+    transition: 0.2s background-color;
+}
+
+.question a.cancel:hover {
+	background-color:red;
+}
+
+div.read_container p {
+	font-size: 13px;
+}
+div.read_container {
+	display: flex;
+	justify-content: space-around;
+	width: 100%;
+}
+
+div.read_container div{
+	max-width: 33%;
+	overflow: hidden;
+}
+
+
+.title_r {
+	font-size: 17px !important;
+	font-weight: bold;
+}
+
+label select {
+    width: 65px;
+    padding: 2px;
+    margin: 5px 4px 1px 4px;
+    background-color: #fff;
+    padding: 4px 10px;
+    font-weight: 100;
+}
+
+div#table_id_filter {
+    width: 50%;
+}
+
+label input {
+    padding: 4px 10px;
+    line-height: 25px;
+    font-size: 14px;
+    font-family: inherit;
+    border: 1px solid #b0b0b0;
+    margin: 0px 8px 7px;
+    width: 75%;
+}
+
+table.dataTable.hover tbody tr:hover, table.dataTable.display tbody tr:hover {
+    background-color: #00bcd424;
+}
+table.dataTable.no-footer {
+    border: none;
+}
+
+div#table_id_paginate {
+    border: 1px solid #9e9e9e54;
+    padding: 0;
+    margin-top: 10px;
+}
+
+div#table_id_paginate a{
+    padding: 5px 10px;
+    margin: 0;
+    border-radius: 0px;
+    color: #00BCD4;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current, .dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: #fff !important;
+    border: 1px solid #00BCD4;
+    background: #00BCD4 !important;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    background: black;
+}
+
+#read_data {
+    display: flex;
+    flex-direction: column;
+}
+
+#read_data span {
+    min-width: 15vw;
+    font-weight: bold;
+}
