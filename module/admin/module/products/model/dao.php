@@ -6,8 +6,8 @@
     function insert($received) {
         $connection = new Connection();
         $insert = $connection->prepare("INSERT INTO 
-        products (id, name, description, stock ,purchase_price, sale_price ,gain ,provider,category,subcategory,clicks) 
-        VALUES ('',?,?,?,?,?,?,?,?,?,'')");
+        products (id, name, description, stock ,purchase_price, sale_price ,gain ,provider,category,subcategory,clicks,img) 
+        VALUES ('',?,?,?,?,?,?,?,?,?,?,?)");
         $name = $received['name'];
         $description = $received['description'];
         $stock = $received['stock'];
@@ -17,6 +17,8 @@
         $provider = $received['provider'];
         $category = $received['category'];
         $subcategory = $received['subcategory'];
+        $clicks = $received['clicks'];
+        $img = $received['img'];
         $insert->bindParam(1, $name);
         $insert->bindParam(2, $description);
         $insert->bindParam(3, $stock);
@@ -26,6 +28,8 @@
         $insert->bindParam(7, $provider);
         $insert->bindParam(8, $category);
         $insert->bindParam(9, $subcategory);
+        $insert->bindParam(10, $clicks);
+        $insert->bindParam(11, $img);
 
         $insert->execute();
         

@@ -112,6 +112,62 @@ div.page div.products {
     flex-wrap: wrap;
 }
 
+div.page .pages ul {
+    display: flex;
+    list-style: none;
+    border: 1px solid #9e9e9e54;
+    padding: 0px;
+}
+
+div.page .pages li {
+    height: 20px;
+    padding: 5px 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border:1px solid transparent;
+}
+div.page div.pagination_css {
+    display: flex;
+    justify-content: flex-end;
+}
+div.page .pages li:hover {
+    background-color: black !important;
+}
+
+div.page .pages li:hover a{
+    color: white;
+}
+
+div.page li.active {
+    color: #fff !important;
+    border: 1px solid #00BCD4;
+    background: #00BCD4 !important;
+}
+
+div.page li.active {
+    color: #fff !important;
+    border: 1px solid #2196F3;
+    background: #2196F3 !important;
+}
+
+div.page li.active a {
+    color: #fff !important;
+}
+
+div.page .pages li.first {
+    position: inherit !important;
+    width: auto !important;
+    padding: 4px 8px !important;
+    height: auto !important;
+}
+
+div.page .pages a {
+    text-decoration: none;
+    color: black;
+}
+
 div.page div.product {
     width: 219px;
     margin: 15px 20px;

@@ -27,7 +27,10 @@
 
     function select_slider_products() {
         $connection = new Connection();
-        $select = $connection->prepare("SELECT * FROM products LIMIT 5");
+        $select = $connection->prepare("SELECT * 
+        FROM products 
+        ORDER BY clicks DESC
+        LIMIT 5");
         $select->execute();
 
         $resultado = $select->fetchAll();
@@ -40,11 +43,22 @@
         $connection = new Connection();
         $select = $connection->prepare("SELECT *
         FROM subcategories
-        WHERE id in
-        (SELECT s.subcategory
-        FROM (SELECT count(*) as total,name FROM products group by subcategory ORDER BY total DESC limit 5) as t
-        INNER JOIN products s
-        ON s.name = t.name)");
+        ORDER BY clicks DESC
+        LIMIT 5");
+
+        $select->execute();
+
+        $resultado = $select->fetchAll();
+        $connection = null;
+
+        return $resultado;
+    }
+
+    function update_clicks($table,$id) {
+        $connection = new Connection();
+        $select = $connection->prepare("UPDATE ".$table."
+        SET clicks = (clicks + 1)
+        WHERE id = '".$id."'");
 
         $select->execute();
 

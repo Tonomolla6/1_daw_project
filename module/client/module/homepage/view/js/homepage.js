@@ -41,7 +41,7 @@ $( document ).ready(function() {
       for (let i = 0; i < result.length; i++) {
         $('.products').html($('.products').html()+
           '<div id_cat="'+result[i][8]+'" id_sub="'+result[i][9]+'" id_button="'+result[i][0]+'" class="div product">'+
-            '<div style="background-image: url(/nueva_final/module/client/module/homepage/view/img/product.jpeg)" class="img"></div>'+
+            '<div style="background-image: url('+result[i]['img']+')" class="img"></div>'+
             '<p>'+result[i][1]+'</p>'+
           '</div>');
       }
@@ -99,6 +99,7 @@ function clicks() {
     var cat = this.getAttribute('id_cat');
     localStorage.setItem('subcategory',sub);
     localStorage.setItem('category',cat);
+    update_clicks("subcategories",sub);
     window.location.href = "index.php?page=products";
   });
 
@@ -109,6 +110,18 @@ function clicks() {
     localStorage.setItem('subcategory',sub);
     localStorage.setItem('category',cat);
     localStorage.setItem('product',id);
+    update_clicks("products",id);
     window.location.href = "index.php?page=products";
+  });
+
+}
+
+function update_clicks(table,id) {
+  $.ajax({
+    url: "module/client/module/homepage/controller/homepage.php",
+    dataType: 'json',
+    data: {op: 'update_clicks', 
+    id: id,
+    table: table}
   });
 }

@@ -26,10 +26,10 @@
         break;
         case 'list_products_add';
             try{
-                if($_GET['keyup'])
-                    $keyup = 'name like "%'.$_GET['keyup'].'%" and ';
-                else
-                    $keyup = "";
+                // if($_GET['keyup'])
+                //     $keyup = 'name like "%'.$_GET['keyup'].'%" and ';
+                // else
+                //     $keyup = "";
                 if($_GET['subcategory'])
                     $list = select_products('WHERE '.$keyup.' subcategory = '.$_GET['subcategory'].' LIMIT 20 OFFSET '.$_GET['mostrados']);
                 else if ($_GET['category'])

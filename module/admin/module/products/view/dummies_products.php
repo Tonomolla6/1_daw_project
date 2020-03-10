@@ -1,10 +1,10 @@
 <?php 
-    $nombre = array("Silla","Mesa","Nevera","Papel","Lejía","Recogedor","Mantel","Vaso","Plato","Tenedor");
+    $nombre = array("Silla","Mesa","Nevera","Papel","Lejia","Recogedor","Mantel","Vaso","Plato","Tenedor");
     foreach ($nombre as $x => $value) {
         $y = 0;
         $i = 0;
         do {
-            $_POST['name'] = strtoupper($value." ".$i);  
+            $_POST['name'] = strtoupper($value." ".$i);
             $result = product_validator_php();
 
             if ($result['result']) {
@@ -20,9 +20,11 @@
                     'purchase_price' => $purchase_price,
                     'sale_price' => $sale_price,
                     'gain' => $sale_price - $purchase_price,
+                    'img' => "/nueva_final/module/client/module/products/view/img/".strtolower($value).".jpg",
                     'provider' => "other",
                     'category' => $category_random['id'],
-                    'subcategory' => $subcategory_random['id']
+                    'subcategory' => $subcategory_random['id'],
+                    'clicks' => 0
                 );
                 insert($insert_end);
                 $y++;

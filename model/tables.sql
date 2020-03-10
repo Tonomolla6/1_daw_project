@@ -7,6 +7,8 @@ CREATE TABLE products (
 	sale_price varchar(255),
     gain varchar(255),
     provider varchar(255),
+    category varchar(255),
+    subcategory varchar(255),
 	clicks int,
     PRIMARY KEY (id)
 );

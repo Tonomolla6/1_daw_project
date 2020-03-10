@@ -26,7 +26,7 @@
 
     function insert_categories($received) {
         $connection = new Connection();
-        $insert = $connection->prepare("INSERT INTO categories (id, name) VALUES ('',?)");
+        $insert = $connection->prepare("INSERT INTO categories (id, name,clicks) VALUES ('',?,0)");
         $name = $received;
         $insert->bindParam(1, $name);
 
@@ -37,7 +37,7 @@
 
     function insert_subcategories($name,$id) {
         $connection = new Connection();
-        $insert = $connection->prepare("INSERT INTO subcategories (id,name,category) VALUES ('',?,?)");
+        $insert = $connection->prepare("INSERT INTO subcategories (id,name,category,clicks) VALUES ('',?,?,0)");
         $name2 = $name;
         $id2 = $id;
         $insert->bindParam(1, $name2);

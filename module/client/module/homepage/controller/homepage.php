@@ -64,5 +64,20 @@
                 exit;
             }
             break;
+        case 'update_clicks';
+            try{
+                $img = update_clicks($_GET['table'],$_GET['id']);
+            }catch (Exception $e){
+                echo json_encode("error");
+                exit;
+            }
+            if(!$img){
+                echo json_encode("errorw");
+                exit;
+            }else{
+                echo json_encode($img);
+                exit;
+            }
+            break;
     }
 ?>

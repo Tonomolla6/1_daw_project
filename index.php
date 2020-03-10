@@ -1,1 +1,1 @@
-<?php include('module/admin/index.php');?>
+<?php include('module/client/index.php');?>
