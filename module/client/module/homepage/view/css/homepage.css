@@ -86,6 +86,8 @@ div.page .information .contenedores .div {
     width: 200px;
     margin: 25px;
     cursor: pointer;
+    text-decoration: none;
+    color: black;
 }
 
 div.page .information .contenedores .img {

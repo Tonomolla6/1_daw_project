@@ -1,4 +1,20 @@
 $( document ).ready(function() {
+  //API
+  $.ajax({
+    type: 'GET',
+    url: 'https://www.googleapis.com/books/v1/volumes?q=hosteleria',
+    dataType: 'json',
+    success: function(result) {
+      for (let i = 0; i < 5; i++) {
+        $('.apis').html($('.apis').html() +
+          '<a href="'+result['items'][i]['volumeInfo']['infoLink']+'" class="div api">'+
+            '<div style="background-image: url('+result['items'][i]['volumeInfo']['imageLinks']['smallThumbnail']+')" class="img"></div>'+
+            '<p>'+result['items'][i]['volumeInfo']['title']+'</p>'+
+          '</a>');
+      }
+    }
+  });
+
   $('#search_bar').val(localStorage.getItem('search'));
 
   // Obtener get
