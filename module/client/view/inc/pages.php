@@ -9,6 +9,15 @@
 		case "contact";
 			include("module/client/module/contact/view/contact.html");
 			break;
+		case "login";
+			include("module/login/view/login.html");
+			break;
+		case "signin";
+			include("module/login/view/signin.html");
+			break;
+		case "checking";
+			include("module/login/view/checking.html");
+			break;
 		default;
 			header("LOCATION: index.php?page=homepage");
 			break;

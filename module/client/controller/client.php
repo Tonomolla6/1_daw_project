@@ -55,5 +55,8 @@
                 exit;
             }
             break;
+            case 'login';
+            
+            break;
     }
 ?>

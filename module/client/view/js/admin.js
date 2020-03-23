@@ -139,7 +139,7 @@ function menu_fixed() {
 }
 
 function clicks_admin() {
-  $('.button_left').on("click",function() {
+  $('.button_').on("click",function() {
     localStorage.removeItem('subcategory');
     id = this.getAttribute('id');
     id_button = this.getAttribute('id_button');
@@ -147,6 +147,22 @@ function clicks_admin() {
       localStorage.setItem("category",id_button);
       window.location.href = "index.php?page=products";
     } else
+      window.location.href = "index.php?page="+id;
+  });
+
+  $('#login').on("click",function() {
+    id = this.getAttribute('id_stat');
+    if (id == "logout") {
+      $.ajax({
+        type: 'POST',
+        url: "module/login/controller/login.php?op=logout",
+        success: function(result) {
+          if (result == "true") {
+            window.location.href = "index.php?page=homepage";
+          }
+        }
+      });
+    } else 
       window.location.href = "index.php?page="+id;
   });
 

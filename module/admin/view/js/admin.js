@@ -117,4 +117,16 @@ $(document).ready(function() {
   catch(error) {
     console.error(error);
   }
+
+  $('#logout').on("click", function() {
+		$.ajax({
+      type: 'POST',
+      url: "module/login/controller/login.php?op=logout",
+      success: function(result) {
+        if (result == "true") {
+          window.location.href = "index.php?page=homepage";
+        }
+      }
+    });
+	});
 });

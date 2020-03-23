@@ -289,3 +289,7 @@ div#all_categories div.list_subcategories .add_subcategories {
     display: flex;
     flex-wrap: wrap;
 }
+
+#login {
+    width: 125px;
+}

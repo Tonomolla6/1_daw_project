@@ -143,6 +143,7 @@
 				exit;
 			}
 			break;
+
 		default;
 			$list = select("*","");
 			include('module/admin/module/products/view/list_products.php');
