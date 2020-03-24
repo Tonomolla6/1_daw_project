@@ -1,0 +1,34 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Iniciar sesión | Productos de hostelería</title>
+<script src="module/login/view/js/login.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<link href="module/login/view/css/login.css" rel="stylesheet" type="text/css"/>
+
+<div class="page">
+    <div class="transparencia">
+        <div class="box">
+            <h1>NETECO  -  Login</h1>
+            <hr>
+            <div method="post" class="inputs">
+                <label for="email">Email*:</label>
+                <input name="email" type="email" placeholder="joanlopez@gmail.com" value="">
+                <span id="error_email" class="error"></span>
+
+                <label for="password">Contraseña*:</label>
+                <input name="password" type="password" placeholder="*******" value="">  
+                <span id="error_password" class="error"></span>
+
+                <input id="login_" class="add_button" name="login" type="button" value="Iniciar sesión">
+                <p>No tienes una cuenta creada? <a class="singin">Regístrate</a></p>
+            </div>
+        </div>
+        <div class="box_check">
+            <h1>Se ha cerrado la sesión pulsa para identificarte</h1>
+            <div>
+                <div id="login" class="add_button login">Iniciar sesión</div>
+                <div id="home" class="add_button home">Volver a la pagina principal</div>
+            </div>
+            
+        </div>
+    </div>
+</div>

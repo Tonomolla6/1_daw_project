@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+}
+
+#menu {
+    display: none !important;
+}
+
+#footer {
+    display: none !important;
+}
+
+.page {
+    height: 100vh;
+    overflow: hidden;
+    background-image: url('/nueva_final/module/login/view/img/fondo.jpg');
+    background-size: cover;
+}
+
+.page .transparencia {
+    height: 100%;
+    width: 100%;
+    background-color: #00000075;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.page .transparencia h1 {
+    color: black;
+    margin: 10px;
+    text-align: center;
+}
+
+.page .transparencia .box_check {
+    display: none;
+    width: 600px;
+    height: auto;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.page .transparencia .box_check strong {
+    color: #00BCD4;
+}
+
+.page .transparencia .box {
+    width: 450px;
+    height: auto;
+    background-color: white;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding: 11px 0px;
+}
+
+.page .transparencia .box .inputs{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    width: 360px;
+}
+
+.page .transparencia .box .inputs label {
+    margin: 0px 0px 5px 0px;
+}
+
+.page .transparencia .box .inputs input{
+    padding: 8px;
+    width: 92%;
+}
+
+.page .transparencia hr {
+    width: 300px;
+    background-color: black;
+    height: 1px;
+}
+
+.page .transparencia .box .inputs p {
+    margin: 5px 0px 5px 0px;
+    font-size: 15px;
+}
+
+.page .transparencia .box .inputs p a:hover {
+    color: #00BCD4;
+    cursor: pointer;
+}
+
+.page .transparencia .box_check .add_button {
+    font-size: 17px;
+    text-align: center;
+    padding: 10px 10px;
+    background: #4b4b4b !important;
+    color: white;
+    font-weight: bold;
+    transition: 0.2s background;
+    cursor: pointer;
+    margin: 3px 0px;
+    width: 250px;
+}
+
+.page .transparencia .box .inputs .add_button {
+    font-size: 17px;
+    text-align: center;
+    padding: 14px 15px;
+    width: 98%;
+    background: #4b4b4b !important;
+    color: white;
+    font-weight: bold;
+    border: 0px;
+    transition: 0.2s background;
+    cursor: pointer;
+    margin: 3px 0px;
+}
+
+.page .transparencia .box .inputs .add_button:hover,
+.page .transparencia .box_check .add_button:hover {
+    background: #00BCD4 !important;
+}
+
+.page .transparencia .box .inputs span.error {
+    color: red;
+    margin-bottom: 13px;
+    font-size: 14px;
+}

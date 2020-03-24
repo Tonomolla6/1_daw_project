@@ -1,0 +1,39 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Registrarse | Productos de hostelería</title>
+<script src="module/login/view/js/signin.js"></script>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<link href="module/login/view/css/login.css" rel="stylesheet" type="text/css"/>
+
+<div class="page">
+    <div class="transparencia">
+        <div class="box">
+            <h1>NETECO  -  Sign in</h1>
+            <hr>
+            <form method="post" class="inputs">
+                <label for="name">Nombre*:</label>
+                <input name="name" type="name" placeholder="Joan" value="">
+                <span id="error_nombre" class="error"></span>
+
+                <label for="email">Email*:</label>
+                <input name="email" type="email" placeholder="joanlopez@gmail.com" value="">
+                <span id="error_email" class="error"></span>
+
+                <label for="password">Contraseña*:</label>
+                <input name="password" type="password" placeholder="******" value=""> 
+                <span id="error_password" class="error"></span>
+
+                <label for="password2">Repetir contraseña*:</label>
+                <input name="password2" type="password" placeholder="******" value="">
+                <span id="error_password2" class="error"></span>
+
+                <input id="signin" class="add_button" name="login" type="button" value="Regístrate">
+                <p>Ya tienes una cuenta creada? <a class="login">Inicia sesión</a></p>
+            </form>
+        </div>
+        <div class="box_check">
+            <h1>Gracias <strong></strong> por registrarte en neteco.</h1>
+            <div id="signin" class="add_button home" name="login" type="button">Volver a la pagina principal</div>
+        </div>
+    </div>
+
+</div>
