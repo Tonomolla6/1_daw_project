@@ -240,7 +240,6 @@ function change_product_details(id) {
         sub: localStorage.getItem('subcategory'),
         cat: localStorage.getItem('category')},
         success: function(result){
-            console.log(result);
             var content = "";
             for (let i = 0; i < result.length; i++) {
                 var content = content +

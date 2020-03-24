@@ -1,7 +1,10 @@
 <?php
 	$path = $_SERVER['DOCUMENT_ROOT'] . '/nueva_final/';
-
     include($path . "module/client/module/products/model/dao.php");
+    session_start();
+    if (isset($_SESSION["time"])) {  
+        $_SESSION["time"] = time();
+    }
     
     switch($_GET['op']){
         case 'list_products';
