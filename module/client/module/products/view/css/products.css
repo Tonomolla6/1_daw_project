@@ -178,6 +178,16 @@ div.page div.product {
     border-bottom: 1px solid #bababa;
     padding-bottom: 20px;
     cursor: pointer;
+    position: relative;
+}
+
+div.page div.products .product_like {
+    position: relative;
+}
+
+div.page div.product:hover p{
+    font-weight: bold;
+    color: #2196F3;
 }
 
 div.page div.products_container {
@@ -197,19 +207,35 @@ div.page div.products div.img {
 }
 
 div.page div.products div.star {
-    font-size: 12px;
-    color:#2196F3;
+    font-size: 21px;
+    width: 27px;
+    height: 27px;
+    color: #2196F3;
+    position: absolute;
+    bottom: 40px;
+    right: 35px;
+    top: 190px;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
 }
 
 div.page div.products div.data {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
+    width: 100%;
+    margin: 5px;
+}
+div.page div.products div.data p {
+    font-size: 18px;
 }
 
-div.page div.products div.data p.title_product{
-    text-align: center;
+div.page div.products div.data h3 {
+    font-size: 21px;
+    margin-top: 5px;
+    color: black;
 }
 
 div.page_details {

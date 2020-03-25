@@ -12,3 +12,10 @@ CREATE TABLE subcategories (
     clicks int,
     PRIMARY KEY (id)
 );
+
+CREATE TABLE favorites (
+    id int AUTO_INCREMENT,
+    user int,
+    product int,
+    PRIMARY KEY (id)
+);
