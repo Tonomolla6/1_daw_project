@@ -27,6 +27,7 @@
                 $var = $_POST['password'];
 				$result = user_test_all(strtolower($_POST['email']));
 				if (password_verify($var, $result['password'])) {
+					$_SESSION["id"] = $result['id'];
 					$_SESSION["name"] = $result['name'];
 					$_SESSION["type"] = $result['type'];
 					$_SESSION["password"] = $result['password'];
@@ -70,8 +71,6 @@
 			session_destroy();
 			session_unset();
 			echo "true";
-
-			
 		break;
 	}
 ?>

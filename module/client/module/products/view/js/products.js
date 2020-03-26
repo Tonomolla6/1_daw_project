@@ -333,10 +333,27 @@ function likes(selected) {
     if (check == "true" || check == "false")
         $(selected).children('.error_like').css('display','flex');
     else {
+        var id = $(selected).next().attr('id_button');
         if ($(selected).children('i').hasClass("fas")) {
+            $.ajax({
+                type: 'GET',
+                url: "module/client/module/products/controller/products.php",
+                data: {
+                    op: 'add_like',
+                    id_product: id
+                }
+            });
             $(selected).children('i').removeClass("fas");
             $(selected).children('i').addClass("far");
         } else {
+            $.ajax({
+                type: 'GET',
+                url: "module/client/module/products/controller/products.php",
+                data: {
+                    op: 'remove_like',
+                    id_product: id
+                }
+            });
             $(selected).children('i').removeClass("far");
             $(selected).children('i').addClass("fas");
         }

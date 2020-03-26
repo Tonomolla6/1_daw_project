@@ -134,5 +134,11 @@
                 exit;
             }
         break;
+        case 'add_like';
+            add_like($_SESSION['id'],$_GET['id_product']);
+        break;
+        case 'remove_like';
+            remove_like($_SESSION['id'],$_GET['id_product']);
+        break;
     }
 ?>

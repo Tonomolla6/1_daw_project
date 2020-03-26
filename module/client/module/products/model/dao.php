@@ -56,4 +56,22 @@
 
         return $resultado;
     }
+
+    function add_like($user,$product) {
+        $connection = new Connection();
+        $insert = $connection->prepare("INSERT INTO favorites (user,product) VALUES (?,?)");
+        $insert->bindParam(1, $user);
+        $insert->bindParam(2, $product);
+
+        $insert->execute();
+        $connection = null;
+    }
+
+    function remove_like($user,$product) {
+        $connection = new Connection();
+        $delete = $connection->prepare("DELETE FROM favorites WHERE user = '".$user."' and product = '".$product."'");
+
+        $delete->execute();
+        $connection = null;
+    }
 ?>
