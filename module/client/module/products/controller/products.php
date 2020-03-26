@@ -59,7 +59,7 @@
                 exit;
             }
             if(!$list){
-                echo json_encode("error");
+                echo json_encode("empty");
                 exit;
             }else{
                 echo json_encode($list);
@@ -74,7 +74,7 @@
                 exit;
             }
             if(!$list){
-                echo json_encode("error");
+                echo json_encode("empty");
                 exit;
             }else{
                 echo json_encode($list);
@@ -94,7 +94,7 @@
                 exit;
             }
             if(!$list){
-                echo json_encode("error");
+                echo json_encode("empty");
                 exit;
             }else{
                 echo json_encode($list);
@@ -109,7 +109,7 @@
                 exit;
             }
             if(!$list){
-                echo json_encode("error");
+                echo json_encode("empty");
                 exit;
             }else{
                 echo json_encode($list);
@@ -127,10 +127,25 @@
                 exit;
             }
             if(!$list){
-                echo json_encode("errorw");
+                echo json_encode("empty");
                 exit;
             }else{
                 echo json_encode($list);
+                exit;
+            }
+        break;
+        case 'list_likes';
+            try{
+                $likes = list_likes($_SESSION['id']);
+            }catch (Exception $e){
+                echo json_encode("error");
+                exit;
+            }
+            if(!$likes){
+                echo json_encode("empty");
+                exit;
+            }else{
+                echo json_encode($likes);
                 exit;
             }
         break;

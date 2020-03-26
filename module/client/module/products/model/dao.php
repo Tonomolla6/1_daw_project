@@ -57,6 +57,17 @@
         return $resultado;
     }
 
+    function list_likes($user){
+        $connection = new Connection();
+        $select = $connection->prepare("SELECT product FROM favorites WHERE user = ".$user);
+        $select->execute();
+
+        $resultado = $select->fetchAll();
+        $connection = null;
+
+        return $resultado;
+    }
+
     function add_like($user,$product) {
         $connection = new Connection();
         $insert = $connection->prepare("INSERT INTO favorites (user,product) VALUES (?,?)");

@@ -44,7 +44,7 @@ function paginacion() {
                 } else {
                     count_productos(partes[num + 1], partes[num]);
                     change_data();
-                    draw_products(result);     
+                    draw_products(result);
                 }
             }
         });
@@ -71,7 +71,7 @@ function productos() {
                 } else {
                     count_productos(result.length, 0);
                     change_data();
-                    draw_products(result);     
+                    draw_products(result);
                 }
             }
         });
@@ -233,7 +233,7 @@ function hovers() {
                 $(this).children('i').removeClass("far");
                 $(this).children('i').addClass("fas");
             }
-            $(this).children('.error_like').css("display","none");
+            $(this).children('.error_like').css("display", "none");
         }
     );
 }
@@ -314,7 +314,7 @@ function search_productos(result, string) {
         $(".info strong").html("");
     } else {
         $('.info p').html(result.length + ' - ' + result.length + ' resultados para');
-        draw_products(result);        
+        draw_products(result);
     }
 }
 
@@ -326,12 +326,13 @@ function draw_products(result) {
     $(".products").html(element);
     clicks();
     change_data();
+    draw_likes();
 }
 
 function likes(selected) {
     var check = login();
     if (check == "true" || check == "false")
-        $(selected).children('.error_like').css('display','flex');
+        $(selected).children('.error_like').css('display', 'flex');
     else {
         var id = $(selected).next().attr('id_button');
         if ($(selected).children('i').hasClass("fas")) {
@@ -358,4 +359,22 @@ function likes(selected) {
             $(selected).children('i').addClass("fas");
         }
     }
+}
+
+function draw_likes() {
+    $.ajax({
+        type: 'GET',
+        url: "module/client/module/products/controller/products.php",
+        dataType: 'json',
+        data: {
+            op: 'list_likes'
+        },
+        success: function(result) {
+            for (let index = 0; index < result.length; index++) {
+                $("[id_button="+result[index][0]+"]").parent().children('.like').children('i').removeClass("far");
+                $("[id_button="+result[index][0]+"]").parent().children('.like').children('i').addClass("fas");
+            }
+            
+        }
+    });
 }
