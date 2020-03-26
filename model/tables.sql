@@ -6,6 +6,7 @@ CREATE TABLE products (
     purchase_price varchar(255),
 	sale_price varchar(255),
     gain varchar(255),
+    img varchar(255),
     provider varchar(255),
     category varchar(255),
     subcategory varchar(255),

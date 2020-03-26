@@ -206,7 +206,7 @@ div.page div.products div.img {
     background-size: cover;
 }
 
-div.page div.products div.star {
+div.page div.products div.like {
     font-size: 21px;
     width: 27px;
     height: 27px;
@@ -220,6 +220,22 @@ div.page div.products div.star {
     justify-content: center;
     align-items: center;
     cursor: pointer;
+}
+
+div.page div.products div.like div.error_like {
+    background-color: rgb(3, 169, 244);
+    color: white;
+    font-weight: bold;
+    width: 210px;
+    height: 25px;
+    font-size: 14px;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 1;
+    top: -25px;
+    display: none;
+    border-radius: 2px;
 }
 
 div.page div.products div.data {

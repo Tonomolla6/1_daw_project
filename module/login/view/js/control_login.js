@@ -1,3 +1,4 @@
+var total;
 $(document).ready(function() {
     login();
     activity();
@@ -11,6 +12,7 @@ function login() {
                      url: "module/login/controller/login.php?op=checking"
                  })
                  .done(function(data) {
+                     total = data;
                      resolve(data);
                  })
                  .fail(function(textStatus) {
@@ -23,18 +25,21 @@ function login() {
     .then(function(result) {
         if (result == "false") {
             window.location.href = "index.php?page=checking"
-        } else if (result) {
-            $('#login p').html(result);
-            $('#login i').removeClass('fa-user');
-            $('#login i').addClass('fa-sign-out-alt');
-            $('#login').attr('id_stat','logout');
-        } else {
+        } else if (result == "true") {
             $('#login i').removeClass('fa-sign-out-alt');
             $('#login i').addClass('fa-user');
             $('#login p').html("Iniciar sesión");
             $('#login').attr('id_stat','login');
-        }
+            total = result;
+        } else {
+            $('#login p').html(result);
+            $('#login i').removeClass('fa-user');
+            $('#login i').addClass('fa-sign-out-alt');
+            $('#login').attr('id_stat','logout');
+            total = result;
+        } 
     });
+    return total;
 }
 
 function activity() {

@@ -24,7 +24,6 @@ $(document).ready(function () {
         lastClass: 'last',
         firstClass: 'first'
     });
-
     paginacion();
 });
 
@@ -45,13 +44,7 @@ function paginacion() {
                 } else {
                     count_productos(partes[num + 1], partes[num]);
                     change_data();
-                    var element = "";
-                    for (let index = 0; index < result.length; index++) {
-                        element = element + '<div class="product_like"><div id_button="' + result[index][0] + '" class="product"><div style="background-image: url(' + result[index]['img'] + ')" class="img"></div><div class="data"><p class="title_product">' + result[index][1] + '</p><div class="star"><i class="far fa-heart"></i></div></div></div></div>';
-                    }
-                    $(".products").html(element);
-                    scroll();
-                    clicks();
+                    draw_products(result);     
                 }
             }
         });
@@ -78,14 +71,7 @@ function productos() {
                 } else {
                     count_productos(result.length, 0);
                     change_data();
-                    var element = "";
-                    console.log(result);
-                    for (let index = 0; index < result.length; index++) {
-                        element = element + '<div></div><div class="product_like"><div class="star"><i class="far fa-heart"></i></div><div id_button="' + result[index][0] + '" class="product"><div style="background-image: url(' + result[index]['img'] + ')" class="img"></div><div class="data"><p class="title_product">' + result[index][1] + '</p><h3>' + result[index][5] + '€</h3></div></div></div>';
-                    }
-                    $(".products").html(element);
-                    scroll();
-                    clicks();
+                    draw_products(result);     
                 }
             }
         });
@@ -223,17 +209,31 @@ function clicks() {
         var id = this.getAttribute('id_button');
         change_product_details(id);
     });
+    $('.like').on('click', function () {
+        likes(this);
+    });
     hovers();
 }
 
 function hovers() {
-    $(".star").hover(
+    $(".like").hover(
         function () {
-            $(this).children().removeClass("far");
-            $(this).children().addClass("fas");
+            if ($(this).children('i').hasClass("far")) {
+                $(this).children('i').removeClass("far");
+                $(this).children('i').addClass("fas");
+            } else {
+                $(this).children('i').removeClass("fas");
+                $(this).children('i').addClass("far");
+            }
         }, function () {
-            $(this).children().removeClass("fas");
-            $(this).children().addClass("far");
+            if ($(this).children('i').hasClass("fas")) {
+                $(this).children('i').removeClass("fas");
+                $(this).children('i').addClass("far");
+            } else {
+                $(this).children('i').removeClass("far");
+                $(this).children('i').addClass("fas");
+            }
+            $(this).children('.error_like').css("display","none");
         }
     );
 }
@@ -307,19 +307,38 @@ function change_data() {
     });
 }
 
-function search_productos(productos, string) {
-    if (productos == "errorw") {
-        $(".products").html("<div class='error'>No se encuentran productos para " + string + "</div>");
+function search_productos(result, string) {
+    if (result == "errorw") {
+        $(".products").html("<div class='error'>No se encuentran result para " + string + "</div>");
         $(".info p").html("");
         $(".info strong").html("");
     } else {
-        $('.info p').html(productos.length + ' - ' + productos.length + ' resultados para');
-        var element = "";
-        for (let index = 0; index < productos.length; index++) {
-            element = element + '<div id_button="' + productos[index][0] + '" class="product"><div style="background-image: url(' + productos[index]['img'] + ')" class="img"></div><div class="data"><p class="title_product">' + productos[index][1] + '</p><div class="star"><i class="far fa-heart"></i></div></div></div>';
+        $('.info p').html(result.length + ' - ' + result.length + ' resultados para');
+        draw_products(result);        
+    }
+}
+
+function draw_products(result) {
+    var element = "";
+    for (let index = 0; index < result.length; index++) {
+        element = element + '<div></div><div class="product_like"><div class="like"><div class="error_like">Es necesario iniciar sesion</div><i class="far fa-heart"></i></div><div id_button="' + result[index][0] + '" class="product"><div style="background-image: url(' + result[index]['img'] + ')" class="img"></div><div class="data"><p class="title_product">' + result[index][1] + '</p><h3>' + result[index][5] + '€</h3></div></div></div>';
+    }
+    $(".products").html(element);
+    clicks();
+    change_data();
+}
+
+function likes(selected) {
+    var check = login();
+    if (check == "true" || check == "false")
+        $(selected).children('.error_like').css('display','flex');
+    else {
+        if ($(selected).children('i').hasClass("fas")) {
+            $(selected).children('i').removeClass("fas");
+            $(selected).children('i').addClass("far");
+        } else {
+            $(selected).children('i').removeClass("far");
+            $(selected).children('i').addClass("fas");
         }
-        $(".products").html(element);
-        clicks();
-        change_data();
     }
 }

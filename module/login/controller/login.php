@@ -48,7 +48,7 @@
 					echo "false";
 				}
 			} else {
-				echo "";
+				echo "true";
 			}
 		break;
 		case 'time':
