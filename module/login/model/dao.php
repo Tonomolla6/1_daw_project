@@ -29,19 +29,20 @@
 
     function insert($received) {
         $connection = new Connection();
-        $insert = $connection->prepare("INSERT INTO login (name, email, password, type) VALUES (?,?,?,?)");
+        $insert = $connection->prepare("INSERT INTO login (name, email, password, avatar, type) VALUES (?,?,?,?,?)");
         $name = $received['name'];
         $email = $received['email'];
         $password = $received['password'];
+        $avatar = $received['avatar'];
         $type = "client";
 
         $insert->bindParam(1, $name);
         $insert->bindParam(2, $email);
         $insert->bindParam(3, $password);
-        $insert->bindParam(4, $type);
+        $insert->bindParam(4, $avatar);
+        $insert->bindParam(5, $type);
 
         $insert->execute();
-        
         $connection = null;
     }
 ?>

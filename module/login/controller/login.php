@@ -13,7 +13,8 @@
 					insert(array(
 						'name' => $_POST['name'],
 						'email' => strtolower($_POST['email']),
-						'password' => password_hash($var, PASSWORD_DEFAULT)
+						'password' => password_hash($var, PASSWORD_DEFAULT),
+						'avatar' => "http://i.pravatar.cc/300?u=".$_POST['hash']
 					));
                     echo "true";
                     break;
@@ -29,9 +30,10 @@
 				if (password_verify($var, $result['password'])) {
 					$_SESSION["id"] = $result['id'];
 					$_SESSION["name"] = $result['name'];
-					$_SESSION["type"] = $result['type'];
-					$_SESSION["password"] = $result['password'];
 					$_SESSION["email"] = $result['email'];
+					$_SESSION["password"] = $result['password'];
+					$_SESSION["avatar"] = $result['avatar'];
+					$_SESSION["type"] = $result['type'];
 					$_SESSION["time"] = time();
                     echo "true";
 				} else
@@ -42,7 +44,9 @@
 			if ($_SESSION["type"] == "admin" || $_SESSION["type"] == "client") {
 				$result = user_test_all(strtolower($_SESSION["email"]));
 				if ($result['password'] == $_SESSION["password"]) {
-					echo $_SESSION["name"];
+					$data = array($_SESSION["name"], $_SESSION["avatar"]);
+					echo json_encode($data);
+					exit;
 				}else {
 					session_destroy();
 					session_unset();

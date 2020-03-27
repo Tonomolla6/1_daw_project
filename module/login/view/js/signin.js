@@ -62,12 +62,14 @@ function validate_signin_js() {
 }
 
 function validate_signin_php(name,email,password) {
+    var hash = hex_md5(email.trim().toLowerCase()); 
     $.ajax({
 		type: 'POST',
 		url: "module/login/controller/login.php?op=signin",
 		data: {
             name: name,
             email: email,
+            hash: hash,
             password: password
         },
 		success: function(result) {

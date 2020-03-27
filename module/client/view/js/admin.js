@@ -162,8 +162,20 @@ function clicks_admin() {
           }
         }
       });
-    } else 
+    } else if (id != "none")
       window.location.href = "index.php?page="+id;
+  });
+
+  $('#login .logout').on("click",function() {
+      $.ajax({
+        type: 'POST',
+        url: "module/login/controller/login.php?op=logout",
+        success: function(result) {
+          if (result == "true") {
+            window.location.href = "index.php?page=homepage";
+          }
+        }
+      });
   });
 
   $('#search_button').on("click",function() {

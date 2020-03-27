@@ -8,10 +8,12 @@ function login(stat) {
     var login_promise = function () {
         return new Promise(function(resolve, reject) {
             $.ajax({ 
-                     type: 'POST', 
-                     url: "module/login/controller/login.php?op=checking"
+                     type: 'POST',
+                     url: "module/login/controller/login.php?op=checking",
+                     dataType: 'json'
                  })
                  .done(function(data) {
+                     console.log(data);
                      total = data;
                      resolve(data);
                  })
@@ -23,20 +25,26 @@ function login(stat) {
     if (stat=='session') {
         login_promise()
         .then(function(result) {
-            if (result == "false") {
+            if (result == false) {
                 window.location.href = "index.php?page=checking"
-            } else if (result == "true") {
-                $('#login i').removeClass('fa-sign-out-alt');
+            } else if (result == true) {
+                $('#login i').removeClass('fa-sort-down');
                 $('#login i').addClass('fa-user');
                 $('#login p').html("Iniciar sesión");
+                $('#login .options').css('display','none');
+                $('#login .avatar').css('display','none');
                 $('#login').attr('id_stat','login');
             } else {
-                $('#login p').html(result);
+                $('#login p').html(result[0]);
                 $('#login i').removeClass('fa-user');
-                $('#login i').addClass('fa-sign-out-alt');
-                $('#login').attr('id_stat','logout');
-                
-            } 
+                $('#login i').addClass('fa-sort-down');
+                $('#login i').css('margin','5px 0px 10px 5px');
+                $('#login').css('flex-direction','row-reverse');
+                $('#login .avatar').css('display','flex');
+                $('#login .avatar').css('background-image','url('+result[1]+')');
+                $('#login .options').css('display','flex');
+                $('#login').attr('id_stat','none');
+            }
         });
     } else {
         login_promise()

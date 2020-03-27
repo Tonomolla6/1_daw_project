@@ -374,7 +374,6 @@ function draw_likes() {
                 $("[id_button="+result[index][0]+"]").parent().children('.like').children('i').removeClass("far");
                 $("[id_button="+result[index][0]+"]").parent().children('.like').children('i').addClass("fas");
             }
-            
         }
     });
 }
