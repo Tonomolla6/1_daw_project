@@ -193,7 +193,7 @@ div#menu div.buttons #login .options {
     top: 68px;
     flex-direction: column;
     width: 200px;
-    border-top: 2px solid white;
+    border-top: 2px solid #fffffff2;
     transition: 0.5s;
     padding: 0px 25px;
 }
