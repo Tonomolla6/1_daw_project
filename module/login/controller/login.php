@@ -34,6 +34,7 @@
 					$_SESSION["password"] = $result['password'];
 					$_SESSION["avatar"] = $result['avatar'];
 					$_SESSION["type"] = $result['type'];
+					$_SESSION["salary"] = $result['salary'];
 					$_SESSION["time"] = time();
                     echo "true";
 				} else

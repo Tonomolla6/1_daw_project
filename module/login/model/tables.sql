@@ -4,6 +4,7 @@ CREATE TABLE login (
     email varchar(255),
     password varchar(255),
 	avatar varchar(255),
+    salary int,
     type varchar(255),
     PRIMARY KEY (id)
 );
