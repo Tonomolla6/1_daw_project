@@ -239,49 +239,61 @@ function hovers() {
 }
 
 function change_product_details(id) {
-    $.ajax({
-        url: "module/client/module/products/controller/products.php",
-        dataType: 'json',
-        data: { op: 'details', id: id },
-        success: function (result) {
-            $('.details').html(
-                '<div style="background-image: url(' + result[0]['img'] + ')" class="imagen"></div>'+
-                '<div class="text_details">'+
-                    '<h2>'+result[0][1]+'</h2>'+
-                    '<hr>'+
-                    '<div class="information">'+
-                        '<div>'+
-                            '<strong>Referencia:</strong>'+
-                            '<p class="reference">#'+result[0][0]+'</p>'+
-                        '</div>'+
-                        '<div>'+
-                            '<strong>Unidades:</strong>'+
-                            '<p class="cantidad">5 pcs/caja</p>'+
-                        '</div>'+
-                    '</div>'+
-                    '<div class="price_box">'+
-                        '<h3 class="price">'+result[0][5] + '€</h3>'+
-                        '<h3>/caja</h3>'+
-                    '</div>'+
-                    '<div class="description">'+
-                        '<strong>Descripcion:</strong>'+
-                        '<p>'+result[0][2]+'</p>'+
-                    '</div>'+
-                    '<div class="buttons">'+
-                        '<div id="cart">'+
-                            'Comprar ahora'+
-                        '</div>'+
-                        '<div id="add_cart">'+
-                            'Añadir a la cesta'+
-                        '</div>'+
-                    '</div>'+
-                '</div>');
-            $('.page_details').css('display', 'flex');
-            $('.page').css('display', 'none');
-            capture_back("index.php?page=products");
-            $("html").animate({ scrollTop: 0 }, "fast");
-        }
+    var details_promise = function () {
+        return new Promise(function(resolve, reject) {
+            $.ajax({
+                url: "module/client/module/products/controller/products.php",
+                dataType: 'json',
+                data: { op: 'details', id: id }
+                })
+                .done(function(result) {
+                    $('.details').html(
+                        '<div style="background-image: url(' + result[0]['img'] + ')" class="imagen"></div>'+
+                        '<div class="text_details">'+
+                            '<h2>'+result[0][1]+'</h2>'+
+                            '<hr>'+
+                            '<div class="information">'+
+                                '<div>'+
+                                    '<strong>Referencia:</strong>'+
+                                    '<p class="reference">#'+result[0][0]+'</p>'+
+                                '</div>'+
+                                '<div>'+
+                                    '<strong>Unidades:</strong>'+
+                                    '<p class="cantidad">5 pcs/caja</p>'+
+                                '</div>'+
+                            '</div>'+
+                            '<div class="price_box">'+
+                                '<h3 class="price">'+result[0][5] + '€</h3>'+
+                                '<h3>/caja</h3>'+
+                            '</div>'+
+                            '<div class="description">'+
+                                '<strong>Descripcion:</strong>'+
+                                '<p>'+result[0][2]+'</p>'+
+                            '</div>'+
+                            '<div class="buttons">'+
+                                '<div id="cart">'+
+                                    'Comprar ahora'+
+                                '</div>'+
+                                '<div id="add_cart">'+
+                                    'Añadir a la cesta'+
+                                '</div>'+
+                            '</div>'+
+                        '</div>');
+                    $('.page_details').css('display', 'flex');
+                    $('.page').css('display', 'none');
+                    localStorage.removeItem('product');
+                    capture_back("index.php?page=products");
+                    $("html").animate({ scrollTop: 0 }, "fast");
+                    resolve(result);
+            });
+        });
+    }
+
+    details_promise().then(function(data){
+        localStorage.setItem('product_cart',data[0][0]);
+        controller_cart();
     });
+
     $.ajax({
         url: "module/client/module/products/controller/products.php",
         dataType: 'json',

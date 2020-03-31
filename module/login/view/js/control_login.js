@@ -25,6 +25,7 @@ function login(stat) {
     if (stat=='session') {
         login_promise()
         .then(function(result) {
+            cart_reload();
             if (result == false) {
                 window.location.href = "index.php?page=checking"
             } else if (result == true) {

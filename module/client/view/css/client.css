@@ -220,7 +220,7 @@ div#menu div.buttons #cart {
 }
 
 div#menu div.buttons #cart:hover .cart_products {
-    transform: translateX(0px);
+    transform: translateX(0px) !important;
 }
 
 div#menu div.buttons #cart .cart_products {
@@ -235,6 +235,11 @@ div#menu div.buttons #cart .cart_products {
     cursor: default;
 }
 
+div#menu div.buttons #cart .cart_products .cart_products_list {
+    max-height: 300px;
+    overflow-y: scroll;
+}
+
 div#menu div.buttons #cart .cart_products .cart_product {
     display: flex;
 }
@@ -243,7 +248,6 @@ div#menu div.buttons #cart .cart_products .cart_product .img {
     width: 100px;
     height: 80px;
     margin: 10px;
-    margin-left: 20px;
     background-size: contain;
     background-repeat: no-repeat;
     background-image: url(/nueva_final/module/cart/view/img/image.jpeg);
@@ -268,7 +272,6 @@ div#menu div.buttons #cart .cart_products .cart_product h3 {
 div#menu div.buttons #cart .cart_products p.error {
     margin: 20px;
     text-align: center;
-    display: none;
 }
 
 div#menu div.buttons #cart .cart_products .cart_button {

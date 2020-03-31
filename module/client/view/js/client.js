@@ -272,7 +272,6 @@ function clicks_admin() {
       window.location.href = "index.php?page=products";
     }
   );
-  
 }
 
 function top_subcategorias(categoria = localStorage.getItem('top_category')) {
