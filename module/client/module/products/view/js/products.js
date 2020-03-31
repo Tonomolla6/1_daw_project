@@ -244,8 +244,6 @@ function change_product_details(id) {
         dataType: 'json',
         data: { op: 'details', id: id },
         success: function (result) {
-            // var element = 0;
-            console.log(result);
             $('.details').html(
                 '<div style="background-image: url(' + result[0]['img'] + ')" class="imagen"></div>'+
                 '<div class="text_details">'+
@@ -262,7 +260,7 @@ function change_product_details(id) {
                         '</div>'+
                     '</div>'+
                     '<div class="price_box">'+
-                        '<h3 class="price"></h3>'+
+                        '<h3 class="price">'+result[0][5] + '€</h3>'+
                         '<h3>/caja</h3>'+
                     '</div>'+
                     '<div class="description">'+
@@ -278,11 +276,8 @@ function change_product_details(id) {
                         '</div>'+
                     '</div>'+
                 '</div>');
-            $('.price').html(result[0][5] + '€');
             $('.page_details').css('display', 'flex');
             $('.page').css('display', 'none');
-            $('div.imagen').css('background-image', 'url(' + result[0]['img'] + ')');
-            localStorage.removeItem('product');
             capture_back("index.php?page=products");
             $("html").animate({ scrollTop: 0 }, "fast");
         }
@@ -376,7 +371,7 @@ function draw_products(result) {
 
 function likes(selected) {
     var check = login();
-    if (check == "true" || check == "false")
+    if (check == true || check == false)
         $(selected).children('.error_like').css('display', 'flex');
     else {
         var id = $(selected).next().attr('id_button');
