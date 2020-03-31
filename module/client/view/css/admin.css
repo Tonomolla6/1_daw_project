@@ -214,6 +214,89 @@ div#menu div.buttons #login .options div span {
     font-size: 18px;
 }
 
+div#menu div.buttons #cart {
+    position: relative;
+}
+
+div#menu div.buttons #cart:hover .cart_products {
+    transform: translateX(0px);
+}
+
+div#menu div.buttons #cart .cart_products {
+    position: absolute;
+    width: 350px;
+    background: white;
+    top: 68px;
+    right: 0;
+    border-top: 2px solid rgb(3, 169, 244);
+    transform: translateX(400px);
+    transition: 0.5s transform;
+    cursor: default;
+}
+
+div#menu div.buttons #cart .cart_products .cart_product {
+    display: flex;
+}
+
+div#menu div.buttons #cart .cart_products .cart_product .img {
+    width: 100px;
+    height: 80px;
+    margin: 10px;
+    margin-left: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(/nueva_final/module/cart/view/img/image.jpeg);
+}
+
+div#menu div.buttons #cart .cart_products .cart_product h2 {
+    margin: 10px 0px 5px 0px;
+    font-size: 16px;
+    width: 240px;
+}
+
+div#menu div.buttons #cart .cart_products .cart_product p {
+    color: #838383;
+}
+
+div#menu div.buttons #cart .cart_products .cart_product h3 {
+    font-weight: 100;
+    font-size: 16px;
+    color: #2196f3;
+}
+
+div#menu div.buttons #cart .cart_products p.error {
+    margin: 20px;
+    text-align: center;
+    display: none;
+}
+
+div#menu div.buttons #cart .cart_products .cart_button {
+    font-size: 17px;
+    text-align: center;
+    padding: 11px;
+    background: #4b4b4b;
+    color: white;
+    font-weight: bold;
+    border: 0px;
+    transition: 0.2s background;
+    cursor: pointer;
+    margin: 10px;
+}
+
+div#menu div.buttons #cart .cart_products .cart_button:hover {
+    background: rgb(3, 169, 244) !important;
+}
+
+div#menu div.buttons #cart .cart_products .cart_total {
+    margin: 10px;
+    background: #e7e7e7;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+    align-items: center;
+}
+
 div#menu div.buttons #close_button {
     display: none;
 }
@@ -339,7 +422,3 @@ div#all_categories div.list_subcategories .add_subcategories {
     display: flex;
     flex-wrap: wrap;
 }
-
-/* #login {
-    width: 125px;
-} */
