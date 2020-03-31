@@ -244,13 +244,47 @@ function change_product_details(id) {
         dataType: 'json',
         data: { op: 'details', id: id },
         success: function (result) {
-            $('.text_details h2').html(result[0][1]);
-            $('.reference').html('#' + result[0][0]);
+            // var element = 0;
+            console.log(result);
+            $('.details').html(
+                '<div style="background-image: url(' + result[0]['img'] + ')" class="imagen"></div>'+
+                '<div class="text_details">'+
+                    '<h2>'+result[0][1]+'</h2>'+
+                    '<hr>'+
+                    '<div class="information">'+
+                        '<div>'+
+                            '<strong>Referencia:</strong>'+
+                            '<p class="reference">#'+result[0][0]+'</p>'+
+                        '</div>'+
+                        '<div>'+
+                            '<strong>Unidades:</strong>'+
+                            '<p class="cantidad">5 pcs/caja</p>'+
+                        '</div>'+
+                    '</div>'+
+                    '<div class="price_box">'+
+                        '<h3 class="price"></h3>'+
+                        '<h3>/caja</h3>'+
+                    '</div>'+
+                    '<div class="description">'+
+                        '<strong>Descripcion:</strong>'+
+                        '<p>'+result[0][2]+'</p>'+
+                    '</div>'+
+                    '<div class="buttons">'+
+                        '<div id="cart">'+
+                            'Comprar ahora'+
+                        '</div>'+
+                        '<div id="add_cart">'+
+                            'Añadir a la cesta'+
+                        '</div>'+
+                    '</div>'+
+                '</div>');
             $('.price').html(result[0][5] + '€');
             $('.page_details').css('display', 'flex');
             $('.page').css('display', 'none');
             $('div.imagen').css('background-image', 'url(' + result[0]['img'] + ')');
             localStorage.removeItem('product');
+            capture_back("index.php?page=products");
+            $("html").animate({ scrollTop: 0 }, "fast");
         }
     });
     $.ajax({
@@ -276,6 +310,17 @@ function change_product_details(id) {
         }
     });
 }
+
+function capture_back(location) {
+    alert = function() {};
+    if (window.history && window.history.pushState) {
+        window.history.pushState('', null, location);
+        $(window).on('popstate', function() {
+            document.location.href = location;
+        });
+    }
+}
+
 function change_data() {
     $.ajax({
         url: "module/client/module/products/controller/products.php",

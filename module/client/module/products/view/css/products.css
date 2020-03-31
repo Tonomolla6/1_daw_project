@@ -346,6 +346,39 @@ div.page_details div.details div.text_details div.price_box h3.price {
     font-size: 28px;
 }
 
+div.page_details div.details div.text_details .description strong {
+    font-size: 18px;
+}
+
+div.page_details div.details div.text_details .description p {
+    margin-top: 10px;
+}
+
+div.page_details div.details div.text_details .buttons {
+    display: flex;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+div.page_details div.details div.text_details .buttons div {
+    width: 200px;
+    font-size: 17px;
+    text-align: center;
+    padding: 11px;
+    background: #4b4b4b;
+    color: white;
+    font-weight: bold;
+    border: 0px;
+    transition: 0.2s background;
+    cursor: pointer;
+    margin: 10px;
+    margin-left: 0px;
+}
+
+div.page_details div.details div.text_details .buttons div:hover {
+    background-color: #03a9f4;
+}
+
 div.suggestions {
     margin-top: 20px;
     padding: 20px;
