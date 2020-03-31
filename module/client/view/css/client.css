@@ -1,0 +1,425 @@
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden;
+}
+
+h1,h2,h3,h4,p,div {
+    margin: 0;
+}
+
+div#menu {
+    width: 100%;
+    height: 70px;
+    position: absolute;
+    background-color: #fffffff2;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    z-index: 1;
+}
+
+div#menu a{
+    text-decoration: none;
+}
+
+div#menu h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 900;
+    font-size: 34px;
+    margin: 0px 35px 6px 120px;
+}
+
+div#menu .logo {
+    display: flex;
+    align-items: center;
+    color: black;   
+}
+
+div#menu .logo div {
+    background-color: transparent !important;
+}
+
+div#content {
+    background-color: rgb(238, 238, 238);
+
+}
+
+div#menu div.search {
+    display: none;
+    opacity: 0;
+    transition: 0.5s;
+    justify-content: center;
+    align-items: center;
+}
+
+div#menu div.search i {
+    border-left: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-left: none;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+}
+
+div#menu div.search i:hover {
+    background-color: #2196F3;
+    border-color: #2196F3;
+}
+
+div#menu div.search input[type="search"] {
+    padding: 10px;
+    font-size: 16px;
+    width: 820px;
+}
+
+div#menu div.search input[type="search"]:focus {
+    box-shadow: none;
+}
+
+/* div#menu div.search select{
+    padding: 8px 10px;
+    cursor: pointer;
+    border: 1px solid black;
+    border-left: none;
+    font-size: 20px;
+    color: white;
+    background-color: black;
+} */
+
+div#menu div.buttons {
+    display: flex;
+    margin-right: 15px;
+}
+
+div#menu div.first {
+    margin-right: 127px;
+    transition: 0.5s height;
+    top: 70px;
+    overflow: hidden;
+    min-width: 550px;
+}
+
+.end {
+    max-width: 400px;
+}
+
+div#menu div.buttons .categorias_left {
+    padding: 0px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: black;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    color: white;
+}
+
+div#menu div.buttons .categorias_left i {
+    margin-left: 6px;
+    margin-bottom: 5px;
+}
+
+div#menu div.buttons .button_left{
+    padding: 0px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 16px;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    text-align: center;
+}
+
+div#menu div.buttons .button_left:hover {
+    border-color: #2196F3;
+}
+
+div#menu div.buttons .button_right{
+    margin: 0px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    font-size: 16px;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+}
+
+div#menu div.buttons .button_right:hover {
+    border-color: #2196F3;
+}
+
+div#menu div.buttons .button_right i {
+    margin-right: 5px;
+    display: flex;
+    font-size: 18px;
+    /* justify-content: center; */
+    align-items: center;
+}
+
+div#menu div.buttons #login {
+    position: relative;
+    padding: 0 10px;
+}
+
+div#menu div.buttons #login .avatar {
+    background: #2196F3;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    background-size: cover;
+}
+
+div#menu div.buttons #login:hover .options {
+    border-color: #2196F3;
+    height: 190px;
+}
+
+div#menu div.buttons #login .options {
+    height: 0;
+    overflow: hidden;
+    display: flex;
+    position: absolute;
+    background-color: #fffffff2;
+    /* box-shadow: 0 2px 4px 0 rgba(0,0,0,.13); */
+    top: 68px;
+    flex-direction: column;
+    width: 200px;
+    border-top: 2px solid #fffffff2;
+    transition: 0.5s;
+    padding: 0px 25px;
+}
+
+div#menu div.buttons #login .options div {
+    height: 50px;
+    display: flex;
+    padding: 0 10px;
+    align-items: center;
+}
+
+div#menu div.buttons #login .options div:hover {
+    color: #2196F3;
+}
+
+div#menu div.buttons #login .options div span {
+    margin: 5px;
+    font-size: 18px;
+}
+
+div#menu div.buttons #cart {
+    position: relative;
+}
+
+div#menu div.buttons #cart:hover .cart_products {
+    transform: translateX(0px);
+}
+
+div#menu div.buttons #cart .cart_products {
+    position: absolute;
+    width: 350px;
+    background: white;
+    top: 68px;
+    right: 0;
+    border-top: 2px solid rgb(3, 169, 244);
+    transform: translateX(400px);
+    transition: 0.5s transform;
+    cursor: default;
+}
+
+div#menu div.buttons #cart .cart_products .cart_product {
+    display: flex;
+}
+
+div#menu div.buttons #cart .cart_products .cart_product .img {
+    width: 100px;
+    height: 80px;
+    margin: 10px;
+    margin-left: 20px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url(/nueva_final/module/cart/view/img/image.jpeg);
+}
+
+div#menu div.buttons #cart .cart_products .cart_product h2 {
+    margin: 10px 0px 5px 0px;
+    font-size: 16px;
+    width: 240px;
+}
+
+div#menu div.buttons #cart .cart_products .cart_product p {
+    color: #838383;
+}
+
+div#menu div.buttons #cart .cart_products .cart_product h3 {
+    font-weight: 100;
+    font-size: 16px;
+    color: #2196f3;
+}
+
+div#menu div.buttons #cart .cart_products p.error {
+    margin: 20px;
+    text-align: center;
+    display: none;
+}
+
+div#menu div.buttons #cart .cart_products .cart_button {
+    font-size: 17px;
+    text-align: center;
+    padding: 11px;
+    background: #4b4b4b;
+    color: white;
+    font-weight: bold;
+    border: 0px;
+    transition: 0.2s background;
+    cursor: pointer;
+    margin: 10px;
+}
+
+div#menu div.buttons #cart .cart_products .cart_button:hover {
+    background: rgb(3, 169, 244) !important;
+}
+
+div#menu div.buttons #cart .cart_products .cart_total {
+    margin: 10px;
+    background: #e7e7e7;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 20px;
+    align-items: center;
+}
+
+div#menu div.buttons #close_button {
+    display: none;
+}
+
+div#menu div.buttons #close_button:hover {
+    border-color: red;
+}
+
+div#menu div.buttons #close_button i {
+    font-size: 23px;
+}
+
+div#footer {
+    height: 250px;
+    background-color: #262626;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+div#footer div {
+    display: flex;
+}
+
+div#footer hr {
+    background-color: white;
+}
+div#footer h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+div#footer p {
+    font-size: 17px;
+    margin: 5px 15px;
+}
+
+div#all_categories {
+    height: 0px;
+    width: 65vw;
+    position: absolute;
+    background: #fffffff2;
+    top: 105px;
+    transition: 0.3s height;
+    overflow: hidden;
+    padding: 0px 17vw;
+    display: flex;
+}
+
+div#all_categories div.list_categories {
+    width: 275px;
+    padding: 10px 0px;
+    overflow: scroll;
+    height: 380px;
+}
+
+div#all_categories div.list_categories::-webkit-scrollbar {
+    display: none;  /* Ocultar scroll */
+}
+
+div#all_categories div.list_categories .top_category{
+    font-size: 16px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    margin: 0px;
+    padding: 9px 15px;
+    cursor: pointer;
+    border-left: 2px solid transparent;
+    justify-content: space-between;
+}
+
+div#all_categories div.list_categories div:first-of-type{
+    color: #2196F3;
+}
+
+div#all_categories div.list_subcategories {
+    width: 70%;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+div#all_categories div.list_subcategories .top_subcategory {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 150px;
+    align-items: center;
+    margin: 0px 5px;
+    cursor: pointer;
+}
+
+div#all_categories div.list_subcategories .top_subcategory .img {
+    width: 130px;
+    height: 130px;
+    background-image: url(/nueva_final/module/client/module/homepage/view/img/subcategorias.jpg);
+    background-size: cover;
+    margin-bottom: 5px;
+}
+
+div#all_categories div.list_subcategories .top_subcategory:hover p {
+    color: rgb(3, 169, 244);
+}
+
+div#all_categories div.list_subcategories h3{
+    margin: 3px 0px 5px 0px;
+    font-weight: 400;
+    font-size: 21px;
+}
+
+div#all_categories div.list_subcategories hr{
+    height: 2px;
+    margin: 0px;
+    background-color: rgb(3, 169, 244);
+    border: none;
+    width: 80px;
+    margin-bottom: 20px;
+}
+
+div#all_categories div.list_subcategories .add_subcategories {
+    display: flex;
+    flex-wrap: wrap;
+}
