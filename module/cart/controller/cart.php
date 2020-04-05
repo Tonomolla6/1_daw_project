@@ -22,5 +22,20 @@
                 exit;
             }
         break;
+        case 'stock_checking';
+            try{
+                $list = stock_checking($_GET['id']);
+            }catch (Exception $e){
+                echo json_encode("error");
+                exit;
+            }
+            if(!$list){
+                echo json_encode("error");
+                exit;
+            }else{
+                echo json_encode($list);
+                exit;
+            }
+        break;
     }
 ?>

@@ -4,10 +4,6 @@ $(document).ready(function () {
     if (localStorage.getItem('product'))
         change_product_details(localStorage.getItem('product'));
 
-    $(window).on('popstate', function (event) {
-        alert("pop");
-    });
-
     $('.pages').bootpag({
         total: 1,
         page: 1,
@@ -271,10 +267,7 @@ function change_product_details(id) {
                                 '<p>'+result[0][2]+'</p>'+
                             '</div>'+
                             '<div class="buttons">'+
-                                '<div id="cart">'+
-                                    'Comprar ahora'+
-                                '</div>'+
-                                '<div id="add_cart">'+
+                                '<div class="add_cart">'+
                                     'Añadir a la cesta'+
                                 '</div>'+
                             '</div>'+
@@ -291,7 +284,7 @@ function change_product_details(id) {
 
     details_promise().then(function(data){
         localStorage.setItem('product_cart',data[0][0]);
-        controller_cart();
+        clicks_cart();
     });
 
     $.ajax({
@@ -319,7 +312,6 @@ function change_product_details(id) {
 }
 
 function capture_back(location) {
-    alert = function() {};
     if (window.history && window.history.pushState) {
         window.history.pushState('', null, location);
         $(window).on('popstate', function() {

@@ -47,17 +47,9 @@ $( document ).ready(function() {
         '</div>';
       }
       $('.list_categories').html(element);
+      
+      manu_search = "true";
 
-      //Seleccionar menu
-      if ($_GET['page'] != "products") {
-        $('#'+$_GET['page']).css("background-color","#e1e1e1");
-        $('#'+$_GET['page']).css("border-color","black");
-        manu_search = "false";
-      } else {
-        manu_search = "true";
-        $('#category'+localStorage.getItem('category')).css("background-color","#e1e1e1");
-        $('#category'+localStorage.getItem('category')).css("border-color","black");
-      }
       menu_fixed();
       clicks_admin();
       top_subcategorias($(".top_subcategory").first().attr('id_button'));

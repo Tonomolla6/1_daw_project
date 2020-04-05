@@ -35,7 +35,7 @@
         $password = $received['password'];
         $avatar = $received['avatar'];
         $salary = '1000';
-        $type = "client";
+        $type = "admin";
 
         $insert->bindParam(1, $name);
         $insert->bindParam(2, $email);

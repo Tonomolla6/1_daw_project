@@ -1,0 +1,206 @@
+div.page {
+    margin: 10px 0px;
+    margin-bottom: 0px;
+    display: flex;
+    transform: translateY(-35px);
+    flex-direction: column;
+    padding: 30px 20px;
+    padding-top: 130px;
+    width: 1330px;
+    min-width: 1370px !important;
+}
+
+div.page p.route {
+    margin: 10px 0px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 50px;
+}
+
+div.page h1 {
+    font-size: 40px;
+    padding-bottom: 20px;
+    margin-left: 50px;
+    font-size: 37px;
+}
+
+div.page p.route strong {
+    color: #2196F3;
+}
+
+div.page .content_cart {
+    display: flex;
+}
+
+div.page .content_cart .products {
+    width: 73%;
+    background-color: white;
+    padding: 20px 30px;
+    min-height: 250px;
+}
+
+div.page .content_cart .products table {
+    border-collapse: collapse;
+}
+
+div.page .content_cart .products table tr {
+    height: 150px;
+}
+
+div.page .content_cart .products table tr:first-of-type {
+    height: auto;
+}
+
+div.page .content_cart .products table tr .img{
+    background-image: url(/nueva_final/module/client/module/products/view/img/product.jpeg);
+    background-size: contain;
+    width: 200px;
+    height: 150px;
+    background-repeat: no-repeat;
+}
+
+div.page .content_cart .products table tr .description {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    padding-right: 20px;
+    flex-direction: column;
+    font-size: 16px;
+}
+
+div.page .content_cart .products table tr .description hr {
+    margin: 0px;
+    border: 0.01em dashed black;
+    margin: 15px 0px 10px 0px;
+}
+
+div.page .content_cart .products table tr .description span {
+    font-size: 15px;
+}
+
+div.page .content_cart .products table tr .description span.less {
+    color: red;
+}
+
+div.page .content_cart .products table tr .description span.plus {
+    color: #2196F3;
+}
+
+div.page .content_cart .products table tr th {
+    text-align: start;
+    padding: 8px;
+    font-size: 17px;
+    color: black;
+    border-bottom: 3px solid #2196F3;
+}
+
+div.page .content_cart .products table tr th:first-of-type {
+    width: 60%;
+}
+
+div.page .content_cart .products table tr td:first-of-type {
+    display: flex;
+}
+
+div.page .content_cart .products table tr td:last-of-type {
+    color: #2196F3;
+    font-weight: bold;
+    position: relative;
+}
+
+div.page .content_cart .products table tr td:last-of-type i {
+    position: absolute;
+    color: #4b4b4b;
+    right: 0;
+    cursor: pointer;
+    font-size: 19px;
+}
+
+div.page .content_cart .products table tr td:last-of-type i:hover {
+    color: red;
+}
+
+div.page .content_cart .products table tr div.price {
+    display: flex;    
+    width: 100px;
+    height: 25px;
+    font-size: 16px;
+}
+
+div.page .content_cart .products table tr div.price div{
+    width: 33%;
+    /* text-align: center; */
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2px;
+    background: #4b4b4b;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+}
+
+div.page .content_cart .products table tr div.price div:hover {
+    background-color: #2196F3;
+}
+
+div.page .content_cart .products table tr div.price input {
+    width: 40px;
+    text-align: center;
+    padding: 2px;
+    border: none;
+    font-size: 16px;
+    background-color: rgb(225, 225, 225);
+    height: 100%;
+}
+
+div.page .content_cart div.total {
+    width: 27%;
+    padding: 0px 20px;
+    min-height: 100px;
+    height: 110px;
+    /* border-left: 2px solid #2196F3; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    margin-left: 20px;
+    border-top: 3px solid #2196F3;
+    margin-top: 20px;
+}
+
+div.page .content_cart div.total .total_finish {
+    margin: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    display: flex;
+    justify-content: space-between;
+}
+
+div.page .content_cart div.total .cart_button {
+    font-size: 17px;
+    text-align: center;
+    padding: 11px;
+    background: #4b4b4b;
+    color: white;
+    font-weight: bold;
+    border: 0px;
+    transition: 0.2s background;
+    cursor: pointer;
+    margin: 10px;
+}
+
+div.page .content_cart div.total .cart_button:hover {
+    background: rgb(3, 169, 244) !important;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}

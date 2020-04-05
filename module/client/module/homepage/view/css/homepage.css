@@ -60,9 +60,9 @@
 }
 
 div.page {
-    background: rgb(225, 225, 225);
     min-height: 700px;
     padding: 10px;
+    background-color: white;
 }
 
 div.page h2 {

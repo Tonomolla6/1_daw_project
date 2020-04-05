@@ -18,6 +18,9 @@
 		case "checking";
 			include("module/login/view/checking.html");
 			break;
+		case "cart";
+			include("module/cart/view/cart.html");
+			break;
 		default;
 			header("LOCATION: index.php?page=homepage");
 			break;

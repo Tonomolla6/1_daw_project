@@ -13,7 +13,6 @@ function login(stat) {
                      dataType: 'json'
                  })
                  .done(function(data) {
-                     console.log(data);
                      total = data;
                      resolve(data);
                  })
