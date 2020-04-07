@@ -10,7 +10,8 @@ function login(stat) {
             $.ajax({ 
                      type: 'POST',
                      url: "module/login/controller/login.php?op=checking",
-                     dataType: 'json'
+                     dataType: 'json',
+                     data: {stat: stat}
                  })
                  .done(function(data) {
                      total = data;
@@ -21,7 +22,7 @@ function login(stat) {
             });
         });
     }
-    if (stat=='session') {
+    if (stat == 'session') {
         login_promise()
         .then(function(result) {
             cart_reload();

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://www.w3schools.com/jsref/tryit.asp?filename=tryjsref_findindex -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"></head><body contenteditable="false">
+
+<p>Click the button to check get the index of the first element in the array that has a value of 18 or more.</p>
+
+<button onclick="myFunction()">Try it</button>
+
+<p id="demo"></p>
+
+<p><strong>Note:</strong> The findIndex() method is not supported in IE 11 (and earlier versions).</p>
+
+<script>
+var ages = [3, 10, 18, 20];
+
+function checkAdult(age) {
+  return age >= 3;
+}
+
+function myFunction() {
+  document.getElementById("demo").innerHTML = ages.findIndex(3);
+}
+</script>
+
+
+
+</body></html>

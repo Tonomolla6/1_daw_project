@@ -54,11 +54,12 @@ function validate_login_php(email,password) {
             password: password
         },
 		success: function(result) {
-            if (result == "true") {
+            if (result == true)
                 window.location.href = "index.php?page=homepage";
-            } else {
+            else if (result == false)
+                window.location.href = "index.php?page=cart";
+            else
                 $('#error_email').html(result);
-            }
         }
     });
 }
