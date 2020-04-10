@@ -39,8 +39,7 @@
 					if ($_SESSION["cart"] == true) {
 						$_SESSION["cart"] = false;
 						echo false;
-					}
-					else
+					} else
                     	echo true;
 				} else
 					echo "La direccion de correo o contraseña no son correctos";

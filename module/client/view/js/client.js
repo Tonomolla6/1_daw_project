@@ -144,6 +144,7 @@ function clicks_admin() {
 
   $('#login').on("click",function() {
     id = this.getAttribute('id_stat');
+    localStorage.removeItem('cart_list');
     if (id == "logout") {
       $.ajax({
         type: 'POST',

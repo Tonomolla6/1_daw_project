@@ -8,20 +8,21 @@ function login(stat) {
     var login_promise = function () {
         return new Promise(function(resolve, reject) {
             $.ajax({ 
-                     type: 'POST',
-                     url: "module/login/controller/login.php?op=checking",
-                     dataType: 'json',
-                     data: {stat: stat}
+                    type: 'POST',
+                    url: "module/login/controller/login.php?op=checking",
+                    dataType: 'json',
+                    data: {stat: stat}
                  })
                  .done(function(data) {
-                     total = data;
-                     resolve(data);
+                    total = data;
+                    resolve(data);
                  })
                  .fail(function(textStatus) {
-                       console.log("Error en la promesa");
+                    console.log("Error en la promesa");
             });
         });
     }
+
     if (stat == 'session') {
         login_promise()
         .then(function(result) {
